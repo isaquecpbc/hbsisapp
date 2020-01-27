@@ -22,6 +22,13 @@ class ContributorsCalc extends Component {
 
   render () {
     const { contributors } = this.state
+    contributors.sort(function (a, b) {
+      if(a.tax == b.tax) {
+          return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
+      } else {
+          return (a.tax < b.tax) ? -1 : 1;
+      }
+  });
 
     return (
       <div className='container py-4'>
