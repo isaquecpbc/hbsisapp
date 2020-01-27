@@ -13,9 +13,11 @@ DB_PASSWORD=
 
 2. abrir o cmd na raiz do projeto
 
-3. inicializar o react com $ npm run dev
+3. Para executar criar as tabelas e popular o banco de dados usamos o migration e o seeder: $ php artisan migrate:fresh --seed
 
-4. iniciar o laravel com $ php artisan serve
+4. inicializar o react com $ npm run dev
+
+5. iniciar o laravel com $ php artisan serve
 
 O aplicativo executar em http://127.0.0.1:8000
 
