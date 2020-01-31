@@ -1,34 +1,21 @@
-# hbsisapp
-## teste app Laravel/react
+# teste app WEB API C#/React.JS
 
-1. Depois do clone ou download, na pasta raiz, abrir o terminal e executar $ composer update para o composer fazer download dos arquivos.
+> O app insere pessoas e calcula o Imposto de Renda.
 
-Para executar o app laravel em um apache:
-2. criar um banco de dados e o configurar no arquivo .env.example na raiz:
+## Backend
 
+1. Depois do clone ou download, na pasta raiz, abrir o SQL Server e criar a tabela como no arquivo /banco de dados.sql
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=hbsisapp
-DB_USERNAME=root
-DB_PASSWORD=
+2. Abrir o projeto no Visual Studio e alterar a conexão do bd no arquivo TAL e colocar os parametros de entrada na linha XX
 
-salve o arquivo sem o ".example", apenas como ".env"
+3. Para executar o App compilar e executar em um navegador
 
-3. Para executar criar as tabelas no banco de dados usamos o migration: $ php artisan migrate
+## Frontend
+4. inicializar o react com terminal na raiz do app /hbsis-app-front-react com o comando $ npm start
 
-4. Para regenerar corretamente as classes e seus componentes: $ composer dump-autoload
+O aplicativo executar em http://localhost:3000
 
-5.  Para popular o banco de dados executamos o seeder: $ php artisan db:seed
-
-6. iniciar o laravel com $ php artisan serve
-
-7. inicializar o react com $ npm run dev
-
-O aplicativo executar em http://127.0.0.1:8000
-
-O teste é padrão, no terminal:
+## Test unitário:
 
 1. cd react-testing
 
