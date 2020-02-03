@@ -117,6 +117,8 @@ namespace WebAppHBSIS.Controllers
                     tax = 0;
                 }
 
+                tax = Math.Round(tax, 1, MidpointRounding.ToEven);
+
                 //store results
                 dt.Rows.Add(new Object[] { row["ContributorId"], row["ContributorName"], row["Cpf"], row["Salary"], row["Dependents"], tax });
             }
