@@ -52,11 +52,11 @@ namespace WebAppHBSIS.Controllers
 
         [HttpGet]
         [ActionName("Calculate")]
-        public HttpResponseMessage GetCalculate(float value)
+        public HttpResponseMessage GetCalculate(double value)
         {
-            float minsalary = value;
-            float income = 0;
-            float tax = 0;
+            double minsalary = value;
+            double income = 0;
+            double tax = 0;
             DataTable table = new DataTable();
 
             string query = @"SELECT ContributorId, ContributorName, Cpf, Salary, Dependents FROM dbo.Contributors";
@@ -80,8 +80,8 @@ namespace WebAppHBSIS.Controllers
 
             foreach (DataRow row in table.Rows)
             {
-                float dependents = (float)row["dependents"];
-                float salary = (float)row["salary"];
+                double dependents = Convert.ToDouble(row["dependents"].ToString());
+                double salary = Convert.ToDouble(row["salary"].ToString());
 
                 // get salario liquido com desconto de dependentes se tiver
                 if (dependents > 0)
@@ -93,7 +93,7 @@ namespace WebAppHBSIS.Controllers
                     income = salary;
                 }
                 // get numero de salarios minimos 
-                float calcNumBasic = salary / minsalary;
+                double calcNumBasic = salary / minsalary;
 
                 // get salario com imposto caso...
                 if (calcNumBasic > 7)
@@ -115,7 +115,6 @@ namespace WebAppHBSIS.Controllers
                 else
                 {
                     tax = 0;
-                    break;
                 }
 
                 //store results
